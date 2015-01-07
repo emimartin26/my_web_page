@@ -27,7 +27,7 @@ $(function() {
                     message: message
                 },
                 cache: false,
-                success: function() {
+                success: function(data) {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -39,6 +39,7 @@ $(function() {
 
                     //clear all fields
                     $('#contactForm').trigger("reset");
+                    console.error(data);
                 },
                 error: function() {
                     // Fail message
@@ -49,6 +50,7 @@ $(function() {
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
+                    console.error("Erorr");
                 },
             })
         },
